@@ -8,13 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".fragment_Movies" />
+        <activity android:name=".fragment_FieldTrips" />
+        <activity android:name=".fragment_Menu" />
         <activity
             android:name=".WeekLayout"
             android:label="@string/title_activity_week_layout"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AccessCode"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

@@ -2,6 +2,8 @@ package com.samuelford48gmail.campnavigateandroid;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,7 @@ public class WeekAdapter extends RecyclerView.Adapter<WeekAdapter.MyHolder>{
 
 
     public void onBindViewHolder(WeekAdapter.MyHolder holder, final int position) {
+
         final Week data = weeks.get(position);
         holder.picture.setImageResource(data.getDrawable());
         holder.week.setText(data.getWeek());
@@ -39,8 +42,45 @@ public class WeekAdapter extends RecyclerView.Adapter<WeekAdapter.MyHolder>{
         {
             @Override
             public void onClick( final View view) {
+                String weekReference="";
+                switch (position){
+                    case 0:
+                        weekReference="Week1";
+                        break;
+                    case 1:
+                        weekReference="Week2";
+                        break;
+                    case 2:
+                        weekReference="Week3";
+                        break;
+                    case 3:
+                        weekReference="Week4";
+                        break;
+                    case 4:
+                        weekReference="Week5";
+                        break;
+                    case 5:
+                        weekReference="Week6";
+                        break;
+                    case 6:
+                        weekReference="Week7";
+                        break;
+                    case 7:
+                        weekReference="Week8";
+                        break;
+                    case 8:
+                        weekReference="Week9";
+                        break;
+                    case 9:
+                        weekReference="week";
+                        break;
+                    default:weekReference="None";
+                }
+
                 Context context = view.getContext();
-Intent i = new Intent(context,WeekLayout.class);
+                PreferenceManager.getDefaultSharedPreferences(context).edit().putString("WeekRef", weekReference).apply();
+
+                Intent i = new Intent(context,WeekLayout.class);
 context.startActivity(i);
               //  Context context = view.getContext();
               //  Intent intent = new Intent(context, Add_class_to_user.class);
