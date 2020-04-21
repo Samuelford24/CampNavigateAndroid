@@ -31,11 +31,11 @@ public class AccessCode extends AppCompatActivity {
         setContentView(R.layout.activity_access_code);
         et = findViewById(R.id.editText);
         b = findViewById(R.id.verifyCode);
-        SharedPreferences mySharedPreferences = getApplicationContext().getSharedPreferences("Sode", Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = mySharedPreferences.edit();
-     String code = mySharedPreferences.getString("Code",null);
+        final SharedPreferences mySharedPreferences = getApplicationContext().getSharedPreferences("Code", Context.MODE_PRIVATE);
+
+     String code = mySharedPreferences.getString("Code","");
         System.out.println("String" + code);
-        if (code!=null) {
+        if (!code.equals("")) {
             startActivity(new Intent(AccessCode.this, MainActivity.class));
         }
         else {
@@ -57,8 +57,9 @@ public class AccessCode extends AppCompatActivity {
                                 ActualCode = (String) document.get("code");
 System.out.println(ActualCode);
                                 if (et.getText().toString().trim().equals(ActualCode)) {
+                                    SharedPreferences.Editor editor = mySharedPreferences.edit();
 
-                                    editor.putString("Code", ActualCode);
+                                    editor.putString("Code", ActualCode).commit();
 
                                     startActivity(new Intent(AccessCode.this, MainActivity.class));
                                 } else {
