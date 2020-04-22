@@ -78,8 +78,10 @@ public class WeekAdapter extends RecyclerView.Adapter<WeekAdapter.MyHolder>{
                 }
 
                 Context context = view.getContext();
-                PreferenceManager.getDefaultSharedPreferences(context).edit().putString("WeekRef", weekReference).apply();
+                SharedPreferences mySharedPreferences = context.getSharedPreferences("WeekRef", Context.MODE_PRIVATE);
 
+                SharedPreferences.Editor editor = mySharedPreferences.edit();
+                editor.putString("WeekRef", weekReference).commit();
                 Intent i = new Intent(context,WeekLayout.class);
 context.startActivity(i);
               //  Context context = view.getContext();
