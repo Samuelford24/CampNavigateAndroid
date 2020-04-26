@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_marginBottom="4dp">
 
 
         <TextView
@@ -20,11 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="22dp"
+            android:layout_marginStart="144dp"
+            android:layout_marginTop="5dp"
             android:text="Week 1"
             android:textColor="#000"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,42 +32,46 @@
             android:id="@+id/where"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="52dp"
+
+
             android:text="Where"
-            android:textColor="#555"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/departure"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.398" />
 
         <TextView
             android:id="@+id/departure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="16dp"
             android:text="Departure"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#000000"
+
+            app:layout_constraintStart_toStartOf="@+id/when"
             app:layout_constraintTop_toBottomOf="@+id/where" />
 
         <TextView
             android:id="@+id/when"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
             android:text="When"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@+id/bring"
             app:layout_constraintTop_toBottomOf="@+id/departure" />
 
         <TextView
             android:id="@+id/bring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="36dp"
             android:text="Bring"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textColor="#000000"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/when" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

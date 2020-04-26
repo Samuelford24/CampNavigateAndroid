@@ -19,6 +19,7 @@ public class fragment_settings extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
+
         return view;
     }
 }

@@ -3,13 +3,21 @@
     package="com.samuelford48gmail.campnavigateandroid">
 
     <application
+
+
+
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/appicon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/appicon_round"
         android:supportsRtl="true"
+        android:name=".ONEsignal_notifications"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".fragment_more" />
+        <activity android:name=".fragment_staff" />
+        <activity android:name=".fragment_pictures" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".fragment_Movies" />
         <activity android:name=".fragment_FieldTrips" />
         <activity android:name=".fragment_Menu" />
@@ -26,7 +34,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -17,7 +17,9 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity {
     final Fragment fragment1 = new fragment_home();
     final Fragment fragment2 = new fragment_announcements();
-    final Fragment fragment3 = new fragment_settings();
+    final Fragment fragment3 = new fragment_pictures();
+    final Fragment fragment4 = new fragment_staff();
+    final Fragment fragment5 = new fragment_more();
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragment1;
     @Override
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        fm.beginTransaction().add(R.id.main_container, fragment5, "5").hide(fragment5).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
        fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
         fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit();
@@ -51,10 +55,22 @@ public class MainActivity extends AppCompatActivity {
                     active = fragment2;
                     fm.popBackStack();
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.pictures:
                     //mTextMessage.setText(R.string.title_notifications);
                     fm.beginTransaction().hide(active).show(fragment3).commit();
                     active = fragment3;
+                    fm.popBackStack();
+                    return true;
+                    case R.id.staff:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    fm.beginTransaction().hide(active).show(fragment4).commit();
+                    active = fragment4;
+                    fm.popBackStack();
+                    return true;
+                case R.id.more:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    fm.beginTransaction().hide(active).show(fragment5).commit();
+                    active = fragment5;
                     fm.popBackStack();
                     return true;
 

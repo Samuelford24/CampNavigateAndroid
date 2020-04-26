@@ -28,7 +28,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="Kindergarden-2nd"
-            android:textColor="#555"
+            android:textColor="#000000"
             app:layout_constraintBottom_toTopOf="@+id/three5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="3rd-5th"
+            android:textColor="#000000"
             app:layout_constraintBottom_toTopOf="@+id/ms"
             app:layout_constraintStart_toStartOf="@+id/k2"
             app:layout_constraintTop_toBottomOf="@+id/k2" />
@@ -50,6 +51,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginBottom="12dp"
             android:text="Middle SChool"
+            android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/cnIcon"
+        app:layout_constraintTop_toBottomOf="@+id/cnIcon">
+
+
+        <ImageView
+            android:id="@+id/cnIcon"
+            android:layout_width="82dp"
+            android:layout_height="95dp"
+            android:scaleType="centerCrop"
+            android:layout_margin="4dp"
+            android:src="@drawable/campnavigateicon"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="3dp" />
+
+        <TextView
+            android:layout_toRightOf="@id/cnIcon"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Camp Navigate"
+            android:textColor="#000"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/Announcement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cnIcon"
+
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Welcome! Summer Camp is new to so many and each summer is new and exciting at Camp Navigate! We will have a field day and fun activities as the campers gain the courage to adapt to new friends, work together, and become familiar with Summer Camp Life!"
+            android:textColor="#555"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="98dp" />
+
+        <TextView
+            android:layout_margin="6dp"
+            android:layout_toRightOf="@id/cnIcon"
+            android:layout_below="@id/title"
+            android:id="@+id/timeStamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="April 6,2020 at 8:46"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="40dp" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
