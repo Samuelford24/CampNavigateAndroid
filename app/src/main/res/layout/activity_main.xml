@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Camp Navigate"
+                android:text="@string/camp_navigate"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
                 android:textSize="36sp"

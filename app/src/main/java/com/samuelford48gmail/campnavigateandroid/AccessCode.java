@@ -39,7 +39,7 @@ public class AccessCode extends AppCompatActivity {
             startActivity(new Intent(AccessCode.this, MainActivity.class));
         }
         else {
-            System.out.println("Value is empty");
+
         }
         b.setOnClickListener(new View.OnClickListener() {
             @Override

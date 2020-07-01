@@ -17,6 +17,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.samuelford48gmail.campnavigateandroid.R;
 
@@ -38,11 +39,10 @@ public class fragment_FieldTrips extends Fragment {
   }
   public void retrieveData() {
     SharedPreferences mySharedPreferences = getContext().getSharedPreferences("WeekRef", Context.MODE_PRIVATE);
-
     final FieldTripAdapter recycler = new FieldTripAdapter(ftList);
     String wr = mySharedPreferences.getString("WeekRef", "");
     System.out.println(wr);
-    FirebaseFirestore.getInstance().collection(wr).document("FieldTrips").collection("FieldTripEntries").addSnapshotListener(new EventListener<QuerySnapshot>() {
+    FirebaseFirestore.getInstance().collection(wr).document("FieldTrips").collection("FieldTripEntries").orderBy("SortTimeStamp", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
       @Override
       public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
         if (e != null) {

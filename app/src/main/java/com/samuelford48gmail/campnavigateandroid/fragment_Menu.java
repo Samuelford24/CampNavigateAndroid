@@ -21,6 +21,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ retrieveData();
         final MenuAdapter recycler = new MenuAdapter(menuList);
         String wr = mySharedPreferences.getString("WeekRef", "");
         System.out.println(wr);
-        FirebaseFirestore.getInstance().collection(wr).document("Menu").collection("MenuEntries").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection(wr).document("Menu").collection("MenuEntries").orderBy("SortTimeStamp", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
                 if (e != null) {

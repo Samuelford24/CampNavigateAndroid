@@ -27,7 +27,7 @@ public class fragment_more extends Fragment {
         View view = inflater.inflate(R.layout.activity_fragment_more, container, false);
         lv = view.findViewById(R.id.listview);
         List<String> arrayList = new ArrayList<String>();
-        arrayList.add("Mentors");
+
 arrayList.add("Settings");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
@@ -42,10 +42,6 @@ arrayList.add("Settings");
                                     long id) {
 
                 String item = ((TextView) view).getText().toString();
-                if (item.equals("Mentors")) {
-
-
-                }
                 if (item.equals("Settings")) {
                     startActivity(new Intent(getContext(),Settings.class));
 

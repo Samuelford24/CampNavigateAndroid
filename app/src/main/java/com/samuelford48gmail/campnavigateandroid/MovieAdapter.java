@@ -29,7 +29,7 @@ public MovieAdapter.MyHolder onCreateViewHolder(ViewGroup parent, int viewType) 
 public void onBindViewHolder(MovieAdapter.MyHolder holder, final int position) {
 
 final Movie data = listdata.get(position);
-        holder.k2.setText("Kindergarden " + data.getK2());
+        holder.k2.setText("Kindergarden: " + data.getK2());
         holder.three5.setText("3rd-5th: " + data.getThree5());
     holder.ms.setText("Middle School: " + data.getMs());
 

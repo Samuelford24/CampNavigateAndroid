@@ -8,7 +8,8 @@
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
     android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp">
+    android:layout_marginRight="15dp"
+    android:elevation="10dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,16 +19,14 @@
         android:padding="12dp"
         app:layout_constraintBottom_toTopOf="@+id/three5"
         app:layout_constraintTop_toTopOf="@+id/three5">
-
-
-        <TextView
+<TextView
             android:id="@+id/k2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Kindergarden-2nd"
+            android:text="@string/kindergarten_2nd"
             android:textColor="#000000"
             app:layout_constraintBottom_toTopOf="@+id/three5"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="3rd-5th"
+            android:text="@string/_3rd_5th"
             android:textColor="#000000"
             app:layout_constraintBottom_toTopOf="@+id/ms"
             app:layout_constraintStart_toStartOf="@+id/k2"
@@ -50,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginBottom="12dp"
-            android:text="Middle SChool"
+            android:text="@string/middle_school"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
