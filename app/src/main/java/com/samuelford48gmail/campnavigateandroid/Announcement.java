@@ -5,7 +5,7 @@ public class Announcement  {
     String timestamp;
 
 
-    Announcement(String announcement, String timestamp){
+    public Announcement(String announcement, String timestamp){
         this.announcement=announcement;
         this.timestamp=timestamp;
     }

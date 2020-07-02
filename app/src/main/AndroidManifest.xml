@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.samuelford48gmail.campnavigateandroid">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-
-
-
+        android:name=".ONEsignal_notifications"
         android:allowBackup="true"
         android:icon="@mipmap/appicon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/appicon_round"
         android:supportsRtl="true"
-        android:name=".ONEsignal_notifications"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Settings"></activity>
+        <service
+            android:name="Widget.AnnouncementWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <receiver android:name="Widget.AnnouncementWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/announcement_info" />
+        </receiver>
+
+        <activity android:name=".Settings" />
         <activity android:name=".fragment_more" />
         <activity android:name=".fragment_staff" />
         <activity android:name=".fragment_pictures" />
