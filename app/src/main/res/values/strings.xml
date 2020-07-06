@@ -66,4 +66,6 @@
     <string name="cn_logo">Camp Navigate Logo</string>
     <string name="staff_picture">Staff Picture</string>
     <string name="week_picture">Week Picture</string>
+    <string name="announcements">Announcements</string>
+    <string name="reload">Reload</string>
 </resources>

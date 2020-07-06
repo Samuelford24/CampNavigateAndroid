@@ -18,6 +18,7 @@
         <receiver android:name="Widget.AnnouncementWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.WIDGET_BUTTON" />
             </intent-filter>
 
             <meta-data
