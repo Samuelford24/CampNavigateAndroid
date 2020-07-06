@@ -15,6 +15,7 @@
 
 
         <ImageView
+            android:contentDescription="@string/staff_picture"
             android:id="@+id/staffImage"
             android:layout_width="0dp"
             android:layout_height="300dp"
