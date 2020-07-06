@@ -81,5 +81,6 @@ public class AnnouncementService extends IntentService {
             }
 
         });
+        startupdateListView(this);
     }
 }
