@@ -3,6 +3,7 @@ package com.samuelford48gmail.campnavigateandroid;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,7 @@ public class fragment_FieldTrips extends Fragment {
       @Override
       public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
         if (e != null) {
-          //error
+            Log.i("Error", "No data");
         }
         ftList.clear();
         for (DocumentSnapshot d:queryDocumentSnapshots){

@@ -49,7 +49,7 @@ retrieveData();
             @Override
             public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
                 if (e != null) {
-                    //error
+                    Log.i("Error", "No data");
                 }
                 menuList.clear();
                 for (DocumentSnapshot d:queryDocumentSnapshots){
