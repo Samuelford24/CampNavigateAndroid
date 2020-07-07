@@ -23,11 +23,13 @@ public class AnnouncementWidget extends AppWidgetProvider {
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
-
-        appWidgetManager.updateAppWidget(appWidgetId, getView(context));
+        Log.i("updateAppWidget", "Received");
+        RemoteViews remoteViews = getView(context);
+        appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
     }
 
     public static void updateAnnouncementWidgets(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+        Log.i("updateAnnouncementWidgets", "Received");
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
@@ -42,6 +44,7 @@ public class AnnouncementWidget extends AppWidgetProvider {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
         views.setPendingIntentTemplate(R.id.widgetLV, pendingIntent);
         Intent intent2 = new Intent(WIDGETBUTTON);
+
         PendingIntent pendingIntent2 = PendingIntent.getBroadcast(context, 0, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.reload, pendingIntent2);
         views.setRemoteAdapter(R.id.widgetLV, intent);
@@ -55,16 +58,21 @@ public class AnnouncementWidget extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         //Start the intent service update widget action, the service takes care of updating the widgets UI
-        AnnouncementService.startReloadService(context);
+        AnnouncementService.startupdateListView(context);
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
-        Log.i("onReceive", "Received");
-        if (WIDGETBUTTON.equals(intent.getAction())) {
-            AnnouncementService.startReloadService(context);
+
+        if (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(intent.getAction())) {
+            Log.i("onReceive", "Received");
+            AnnouncementService.startupdateListView(context);
 //your code here
+
+        } else if (WIDGETBUTTON.equals(intent.getAction())) {
+
+            AnnouncementService.startupdateListView(context);
 
         }
     }

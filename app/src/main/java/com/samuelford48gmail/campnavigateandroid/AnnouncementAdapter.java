@@ -1,5 +1,9 @@
 package com.samuelford48gmail.campnavigateandroid;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +12,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import Widget.AnnouncementWidget;
 
 public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapter.MyHolder>{
 
@@ -33,8 +39,6 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
         holder.timeStamp.setText(data.getTimestamp());
 
 
-
-
     }
 
     @Override
@@ -54,5 +58,6 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
 
         }
     }
+
 
 }

@@ -1,8 +1,12 @@
 package com.samuelford48gmail.campnavigateandroid;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +25,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import Widget.AnnouncementWidget;
 
 public class fragment_announcements extends Fragment {
     RecyclerView rv;
@@ -49,6 +55,7 @@ public class fragment_announcements extends Fragment {
 
 
                 }
+                updateWidget(getContext());
                 recycler.notifyDataSetChanged();
             }
 
@@ -58,5 +65,25 @@ public class fragment_announcements extends Fragment {
         rv.setItemAnimator(new DefaultItemAnimator());
         rv.setAdapter(recycler);
 
+    }
+
+    public void updateWidget(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(context.getString(R.string.announcements), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        StringBuilder announcementbuilder = new StringBuilder();
+        Intent intent = new Intent(context, AnnouncementWidget.class);
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        int[] ids = AppWidgetManager.getInstance(context).getAppWidgetIds(new ComponentName(context, AnnouncementWidget.class));
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+        System.out.println("Size" + announcementList.size());
+        for (Announcement a : announcementList) {
+            System.out.println("Announcement" + a.getAnnouncement());
+            announcementbuilder.append(a.getAnnouncement()).append(",");
+        }
+
+        String announcementsfinal = announcementbuilder.toString().trim();
+        System.out.println("AnnouncementsFinal" + announcementsfinal);
+        editor.putString(getString(R.string.announcements), announcementsfinal).apply();
+        context.sendBroadcast(intent);
     }
 }
